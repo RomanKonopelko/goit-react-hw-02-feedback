@@ -1,10 +1,6 @@
 import Feedback from './Components/Feedback';
 function App() {
-  return (
-    <>
-      <Feedback />
-    </>
-  );
+  return <Feedback />;
 }
 
 export default App;
