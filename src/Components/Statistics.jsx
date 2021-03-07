@@ -3,7 +3,7 @@ import { v4 as randomID } from 'uuid';
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
     const positiveStats = positivePercentage();
     return <ul>
-        <li key={randomID()} key>Good:{good}</li>
+        <li key={randomID()} >Good:{good}</li>
         <li key={randomID()} >Neutral:{neutral}</li>
         <li key={randomID()} >Bad:{bad}</li>
         <li key={randomID()} >Positive:{positiveStats}%</li>
