@@ -1,6 +1,13 @@
-import PropTypes from 'prop-types'
 import { v4 as randomID } from 'uuid';
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+
+interface Props {
+    good: number,
+    neutral: number,
+    bad: number,
+    total(): number,
+    positivePercentage(): number
+}
+const Statistics = ({ good, neutral, bad, total, positivePercentage }:Props) => {
     const positiveStats = positivePercentage();
     return <ul>
         <li key={randomID()} >Good:{good}</li>
@@ -11,11 +18,4 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
     </ul>
 }
 
-Statistics.propTypes = {
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-    total: PropTypes.func.isRequired,
-    positivePercentage: PropTypes.func.isRequired
-}
 export default Statistics;

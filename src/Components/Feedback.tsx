@@ -11,7 +11,7 @@ export default function Feedback() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const addFeedback = (e: {currentTarget: {name: string}} ) => {
+  const addFeedback = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     console.dir(e.currentTarget.name, 'e');
 const {name} = e.currentTarget
     switch (name) {
@@ -28,7 +28,6 @@ const {name} = e.currentTarget
   }
 
   const countTotalFeedback = () => {
-
     return Object.values({ good, neutral, bad }).reduce((acc, val) => {
       return acc + val;
     }, 0)
