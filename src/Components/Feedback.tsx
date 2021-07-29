@@ -2,14 +2,18 @@ import { useState } from 'react'
 import Statistics from './Statistics'
 import Section from './Section'
 import FeedbackOption from './FeedbackOptions'
+import React from 'react';
+
+
 
 export default function Feedback() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const addFeedback = (e) => {
-    const { name } = e.target
+  const addFeedback = (e: {currentTarget: {name: string}} ) => {
+    console.dir(e.currentTarget.name, 'e');
+const {name} = e.currentTarget
     switch (name) {
       case 'good': setGood(good + 1)
         break;
@@ -18,7 +22,8 @@ export default function Feedback() {
       case 'bad': setBad(bad + 1)
         break;
       default:
-        return
+        return ;
+        
     }
   }
 
